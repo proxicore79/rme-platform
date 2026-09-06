@@ -99,6 +99,6 @@ function buildBody(shipment, event, kind) {
   if (event?.note) lines.push(`Note: ${event.note}`);
   lines.push('----------------------------------------');
   lines.push('Track anytime at your Royal Mail Express portal');
-  lines.push('Support: Kampala HQ · +256 772 300 400 · Mon–Sat');
+  lines.push('Support: +1 (213) 314-3229 · care@royalmail-express.com · Mon–Sat');
   return lines.join('\n');
 }

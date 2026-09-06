@@ -55,13 +55,13 @@ function footerHtml({ demo } = {}) {
           </p>
         </div>
         <div>
-          <h4>Head office — Kampala</h4>
-          <p>RME House, Plot 17 Kampala Road,<br>P.O. Box 7261, Kampala, Uganda</p>
+          <h4>Head office — USA</h4>
+          <p>10052 Nys Rte #242,<br>Little Valley, NY 14755, USA</p>
           <p style="line-height:2">
-            ☎ &nbsp;+256 772 300 400 (24/7 desk)<br>
-            💬 WhatsApp: +256 772 300 400<br>
+            ☎ &nbsp;+1 (213) 314-3229 (24/7 desk)<br>
+            💬 WhatsApp: +1 (213) 314-3229<br>
             ✉ &nbsp;<a href="mailto:care@royalmail-express.com">care@royalmail-express.com</a><br>
-            🕗 Mon–Fri 08:00–18:00 · Sat 09:00–14:00 EAT
+            🕗 Mon–Fri 08:00–18:00 · Sat 09:00–14:00 ET
           </p>
           <p class="small" style="color:#6f86a8">Hubs: JFK · LHR · SZX · EBB · NBO · MBA</p>
         </div>
@@ -89,7 +89,7 @@ ${extraHead}
 <body>
 <div class="topbar no-print"><div class="wrap">
   <span>🚚 Door-to-door freight &amp; parcels — Europe · USA · Asia → Africa</span>
-  <span>📞 24/7 desk +256 772 300 400 &nbsp;·&nbsp; ✉ care@royalmail-express.com</span>
+  <span>📞 24/7 desk +1 (213) 314-3229 &nbsp;·&nbsp; ✉ care@royalmail-express.com</span>
 </div></div>
 <header class="site no-print">
   <div class="wrap navrow">

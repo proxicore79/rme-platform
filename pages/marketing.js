@@ -467,19 +467,19 @@ export function bookPage(ctx) {
 export function contactPage() {
   const content = `
   <div class="strip"><div class="wrap"><div class="crumbs"><a href="/">Home</a> / Contact</div>
-    <h1>Talk to a human in Kampala</h1>
+    <h1>Talk to our team</h1>
     <p>Reach the operations desk 24/7 — by phone, WhatsApp, email or the form below.</p></div></div>
   <section class="section" style="padding-top:8px;margin-top:-48px">
     <div class="wrap grid g3">
       <div class="card"><div style="font-size:1.6rem">📞</div><h3>Phone &amp; WhatsApp</h3>
-        <p><b>+256 772 300 400</b><br><span class="muted small">24/7 tracking line</span></p>
+        <p><b>+1 (213) 314-3229</b><br><span class="muted small">24/7 tracking line</span></p>
         <p class="small muted">English &amp; Luganda support. WhatsApp status messages available.</p></div>
       <div class="card"><div style="font-size:1.6rem">✉️</div><h3>Email</h3>
         <p><b>care@royalmail-express.com</b><br><span class="muted small">replies within one business day</span></p>
         <p class="small muted">For customs documents: clearance@royalmail-express.com</p></div>
       <div class="card"><div style="font-size:1.6rem">📍</div><h3>Head office</h3>
-        <p>RME House, Plot 17 Kampala Road,<br>P.O. Box 7261, Kampala, Uganda</p>
-        <p class="small muted">Mon–Fri 08:00–18:00 · Sat 09:00–14:00 EAT</p></div>
+        <p>10052 Nys Rte #242,<br>Little Valley, NY 14755, USA</p>
+        <p class="small muted">Mon–Fri 08:00–18:00 · Sat 09:00–14:00 ET</p></div>
     </div>
     <div class="wrap grid mt2" style="grid-template-columns:1.1fr .9fr;align-items:start">
       <form class="card" id="c-form">
@@ -497,9 +497,8 @@ export function contactPage() {
       <div class="card">
         <h3>Office locations</h3>
         <ul style="line-height:2;padding-left:18px" class="small">
-          <li>🇺🇬 <b>Kampala HQ</b> — Kampala Road, Kampala</li>
-          <li>🇺🇬 <b>Entebbe desk</b> — Airport area (cargo clearances)</li>
-          <li>🇺🇸 <b>Atlanta</b> — US consolidation hub</li>
+          <li>🇺🇸 <b>US HQ</b> — Little Valley, NY</li>
+          <li>🇺🇬 <b>Kampala desk</b> — East Africa operations</li>
           <li>🇬🇧 <b>London</b> — UK partner network</li>
           <li>🇨🇳 <b>Shenzhen / Yiwu</b> — China trade desks</li>
         </ul>

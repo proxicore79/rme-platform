@@ -28,7 +28,7 @@
           <div class="ico">🤔</div>
           <h3>We couldn't find that shipment</h3>
           <p class="muted">${escHtml(e.message)}</p>
-          <p class="small muted">Still stuck? Call our 24/7 desk on <b>+256 772 300 400</b> — we'll dig it out for you.</p>
+          <p class="small muted">Still stuck? Call our 24/7 desk on <b>+1 (213) 314-3229</b> — we'll dig it out for you.</p>
         </div>`;
     }
   }
@@ -138,7 +138,7 @@
 
         <div class="card mt2" style="background:var(--navy);color:#dfe8f5">
           <h3 style="color:#fff">Need help?</h3>
-          <p class="small" style="margin:0">📞 +256 772 300 400 (24/7)<br>✉️ care@royalmail-express.com<br>💬 WhatsApp same number</p>
+          <p class="small" style="margin:0">📞 +1 (213) 314-3229 (24/7)<br>✉️ care@royalmail-express.com<br>💬 WhatsApp same number</p>
         </div>
       </div>
     </div>`;
