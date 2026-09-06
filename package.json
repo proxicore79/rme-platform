@@ -1,0 +1,23 @@
+{
+  "name": "royal-mail-express-international",
+  "version": "1.0.0",
+  "description": "Royal Mail Express International — global freight & courier logistics from the USA, UK and China to Uganda & Africa. Booking, live tracking with notifications, and an admin console.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:check": "node scripts/check_supabase.mjs",
+    "seed:demo": "node scripts/seed_demo.mjs"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.4",
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "serverless-http": "^4.0.0",
+    "twilio": "^5.2.0",
+    "ws": "^8.21.3"
+  }
+}
