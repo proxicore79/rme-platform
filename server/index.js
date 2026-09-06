@@ -40,8 +40,6 @@ const site = {
   url: 'http://localhost',
 };
 
-const sampleTracking = ['RME-US-260901-240820-93', 'RME-UK-260901-264364-79', 'RME-CN-260901-258661-53'];
-
 const ok = (res, data) => res.json({ ok: true, ...data });
 const fail = (res, status, error) => res.status(status).json({ ok: false, error });
 
@@ -129,7 +127,7 @@ app.get('/api/lookups', (req, res) => {
   ok(res, {
     origins: ORIGINS, destinations: DESTINATIONS, services: SERVICES,
     stages: { air: STAGES_AIR, sea: STAGES_SEA }, exceptions: EXCEPTION_STATUSES,
-    fx: FX_USD, sampleTracking,
+    fx: FX_USD,
     currencies: { US: 'USD', UK: 'GBP', CN: 'CNY' },
   });
 });
@@ -443,7 +441,7 @@ app.get('/api/admin/notifications', async (req, res) => {
 /* ------------------------------------------------------------- */
 const ctx = (req, extra = {}) => ({
   req, site, origins: ORIGINS, destinations: DESTINATIONS, services: SERVICES,
-  sampleTracking, adminKey: env.adminKey, backend: mode, ...extra,
+  adminKey: env.adminKey, backend: mode, ...extra,
 });
 
 app.get('/', (req, res) => res.send(renderPage('home', ctx(req))));

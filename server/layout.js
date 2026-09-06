@@ -29,7 +29,7 @@ function footerHtml({ demo } = {}) {
             <img src="/img/logo.png" alt="RME logo" class="badge-3d">
             <div><div class="bn" style="color:#fff">Royal Mail Express</div><div class="bs">International · Africa</div></div>
           </div>
-          <p>Express parcels, air freight and consolidated sea cargo from the USA, the UK and China to Uganda and across Africa — licensed customs brokerage and live tracking on every single consignment.</p>
+          <p>Express parcels, air freight and consolidated sea cargo from Europe, the USA and Asia to cities across Africa — licensed customs brokerage and live tracking on every single consignment.</p>
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <a class="btn btn-gold btn-sm" href="/quote.html">Get an instant quote</a>
             <a class="btn btn-white btn-sm" href="/track.html">Track a shipment</a>
@@ -88,7 +88,7 @@ ${extraHead}
 </head>
 <body>
 <div class="topbar no-print"><div class="wrap">
-  <span>🚚 Door-to-door freight &amp; parcels — USA 🇺🇸 · UK 🇬🇧 · China 🇨🇳 → Uganda 🇺🇬 &amp; Africa</span>
+  <span>🚚 Door-to-door freight &amp; parcels — Europe · USA · Asia → Africa</span>
   <span>📞 24/7 desk +256 772 300 400 &nbsp;·&nbsp; ✉ care@royalmail-express.com</span>
 </div></div>
 <header class="site no-print">
@@ -97,7 +97,7 @@ ${extraHead}
       <img src="/img/logo.png" alt="Royal Mail Express International logo">
       <div>
         <div class="bn">Royal Mail Express</div>
-        <div class="bs">International · Uganda &amp; Africa</div>
+        <div class="bs">International · Europe · USA · Asia → Africa</div>
       </div>
     </a>
     <button class="menu-btn" aria-label="Menu">☰</button>

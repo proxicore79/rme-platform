@@ -2,7 +2,6 @@
  * Portal pages — live tracking (public) and the admin console.
  */
 export function trackPage(ctx) {
-  const samples = ctx.sampleTracking.map((t) => `<a href="/track.html?q=${t}">${t}</a>`).join(' · ');
   const content = `
   <div class="strip">
     <div class="wrap">
@@ -11,16 +10,16 @@ export function trackPage(ctx) {
       <p>Enter your Royal Mail Express tracking number for a live, up-to-the-minute journey timeline.</p>
       <form class="trackbox" action="/track.html" method="get" style="max-width:680px;margin-top:8px">
         <div class="row">
-          <input type="text" name="q" id="tq" placeholder="RME-US-260901-240820-93" autocomplete="off" value="${ctx.tracking ? esc(ctx.tracking) : ''}">
+          <input type="text" name="q" id="tq" placeholder="Paste your tracking number" autocomplete="off" value="${ctx.tracking ? esc(ctx.tracking) : ''}">
           <button class="btn btn-red" type="submit">Track</button>
         </div>
-        <div class="sample">Demo numbers: ${samples}</div>
+        <div class="hint">Format: RME-XX-YYMMDD-######-## · sent in your booking confirmation email</div>
       </form>
     </div>
   </div>
   <section class="section" style="padding-top:6px">
     <div class="wrap" id="track-root">
-      <div class="empty-state" id="track-loading"><div class="ico">🔎</div><p>Enter a tracking number above, or pick a demo shipment.</p></div>
+      <div class="empty-state" id="track-loading"><div class="ico">🔎</div><p>Enter your tracking number above — it was sent to you in your booking confirmation email.</p></div>
     </div>
   </section>
   <script src="/js/track.js"></script>`;

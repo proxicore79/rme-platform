@@ -11,7 +11,6 @@ const qs = (o) => Object.entries(o).filter(([, v]) => v !== undefined && v !== '
 /* HOME                                                            */
 /* =============================================================== */
 export function homePage(ctx) {
-  const samples = ctx.sampleTracking.map((t) => `<a href="/track.html?q=${t}">${t}</a>`).join(' · ');
   const svcCards = ctx.services.map((s) => `
     <div class="svc">
       <div class="top">
@@ -21,7 +20,7 @@ export function homePage(ctx) {
       <h3>${s.name}</h3>
       <p class="muted small">${s.tagline}</p>
       <p class="small">${s.blurb}</p>
-      <ul><li>Real-time tracking &amp; status notifications</li><li>Door-to-door in Uganda &amp; regional Africa</li><li>Insurance cover available</li></ul>
+      <ul><li>Real-time tracking &amp; status notifications</li><li>Door-to-door across Africa</li><li>Insurance cover available</li></ul>
       <div class="price">from ${fromPrice(s.code)} USD/kg</div>
       <div style="margin-top:auto;display:flex;gap:8px;padding-top:14px">
         <a class="btn btn-navy btn-sm" href="/services.html">Details</a>
@@ -52,9 +51,9 @@ export function homePage(ctx) {
 
   const steps = [
     ['1', '🗂️', 'Request a quote', 'Get an instant door-to-door price for your parcel or cargo in under a minute.'],
-    ['2', '📦', 'We pick up', 'Our partner courier collects from your door in the USA, UK or China — or drop at our consolidation hub.'],
-    ['3', '✈️ / 🚢', 'We fly or sail it', 'Export handling, international leg and import customs clearance handled end-to-end.'],
-    ['4', '🏠', 'Delivered + notified', 'Delivered to your door in Uganda or across Africa, with email & SMS updates at every step.'],
+    ['2', '📦', 'We pick up', 'Our partner courier collects from your door anywhere in Europe, the USA or Asia — or drop off at our consolidation hub.'],
+    ['3', '✈️ / 🚢', 'We fly or sail it', 'Export handling, the international leg and import customs clearance handled end-to-end.'],
+    ['4', '🏠', 'Delivered + notified', 'Delivered to your door anywhere in Africa, with email & SMS updates at every step.'],
   ].map(([n, i, t, d]) => `
     <div class="step">
       <span class="num">${n}</span>
@@ -84,46 +83,37 @@ export function homePage(ctx) {
     <div class="wrap content">
       <div>
         <div class="kicker">Royal Mail Express International</div>
-        <h1>Ship from the USA, UK &amp; China — delivered home to Uganda &amp; Africa.</h1>
-        <p class="lede">Express parcels, air freight and consolidated sea cargo — with real-time tracking, licensed customs brokerage and notifications on every single shipment.</p>
+        <h1>From Europe, USA and Asia to Africa!</h1>
+        <p class="lede">Express parcels, air freight and consolidated sea cargo — shipped door-to-door across Africa with real-time tracking, licensed customs brokerage and notifications on every single shipment.</p>
         <div class="statline">
-          <div class="stat"><b>3</b><span>Origin gateways</span></div>
+          <div class="stat"><b>3</b><span>Origin regions</span></div>
           <div class="stat"><b>15+</b><span>African cities</span></div>
           <div class="stat"><b>3–5d</b><span>Express air</span></div>
-          <div class="stat"><b>24/7</b><span>Human support</span></div>
         </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
-          <a class="btn btn-gold" href="/quote.html">Get an instant quote →</a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+          <a class="btn btn-gold" href="/quote.html">Get an instant quote</a>
           <a class="btn btn-ghost" href="/book.html">Book a shipment</a>
         </div>
       </div>
       <div>
         <form class="trackbox" action="/track.html" method="get">
-          <label>🔍 Track your package — no login needed</label>
+          <label>Track your package</label>
           <div class="row">
-            <input type="text" name="q" placeholder="RME-US-260901-240820-93" autocomplete="off">
+            <input type="text" name="q" placeholder="Paste your tracking number" autocomplete="off">
             <button class="btn btn-red" type="submit">Track</button>
           </div>
-          <div class="sample">Try a live demo: ${samples}</div>
+          <div class="hint">Format: RME-XX-YYMMDD-######-## · from your booking email</div>
         </form>
       </div>
     </div>
   </section>
-
-  <div class="section alt" style="padding:26px 0">
-    <div class="wrap center" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-      <span class="pill pill-green">✔ Licensed freight &amp; customs partner network</span>
-      <span class="pill pill-gold">📦 Door-to-door air &amp; sea (LCL)</span>
-      <span class="pill pill-blue">🔔 Live tracking + notifications</span>
-    </div>
-  </div>
 
   <section class="section">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Our services</div>
         <h2>One network. Three services. Every shipment tracked.</h2>
-        <p class="muted">Pick Express Air when it must arrive fast, Standard Air for everyday parcels, or Economy Sea (LCL) when you're moving volume — all door-to-door from any US, UK or Chinese address.</p>
+        <p class="muted">Express Air when it must arrive fast, Standard Air for everyday parcels, Economy Sea (LCL) for volume — all door-to-door from any address in Europe, the USA or Asia.</p>
       </div>
       <div class="grid g3">${svcCards}</div>
     </div>
@@ -133,21 +123,14 @@ export function homePage(ctx) {
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Where we collect</div>
-        <h2>Three international lanes into East Africa &amp; beyond</h2>
-        <p class="muted">Consolidation and express partners in the US, UK and China feed our regional hub at Entebbe and partner gateways in Kenya.</p>
+        <h2>Three corridors into Africa</h2>
+        <p class="muted">Partner networks across the USA, Europe and Asia feed our African gateways, then clear and deliver through our own licensed brokerage and last-mile team.</p>
       </div>
       <div class="grid g3">${lanes}</div>
-      <div class="mt2" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-        <img src="${IMG.ug}" style="width:220px;border-radius:12px;object-fit:cover;height:130px" alt="Kampala, Uganda">
-        <div style="flex:1;min-width:240px">
-          <h3 style="margin:0 0 4px">🇺🇬 Regional gateway: Entebbe &amp; Kampala</h3>
-          <p class="muted small" style="margin:0">Express clearances at EBB, bonded warehousing and last-mile delivery across Kampala, Gulu, Mbarara and partner cities throughout Africa.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-bottom:34px">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Destinations</div>
@@ -167,81 +150,17 @@ export function homePage(ctx) {
     </div>
   </section>
 
-  <section class="section" style="padding-top:30px">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Why Royal Mail Express International</div>
-        <h2>Built for the diaspora and trade moving Africa's way</h2>
+        <h2>Built to keep your shipment visible</h2>
       </div>
       <div class="grid g3">${features}</div>
     </div>
-  </section>
+  </section>`;
 
-  <section class="section dark">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow" style="color:#e8c963">Network activity</div>
-        <h2 style="color:#fff">Live from our operations floor</h2>
-        <p>Recent status events across active shipments.</p>
-      </div>
-      <div id="live-activity" class="grid g2"><div class="empty-state"><div class="ico">🚚</div><p>Loading live activity…</p></div></div>
-    </div>
-  </section>
-
-  <section class="section alt" style="padding:46px 0">
-    <div class="wrap">
-      <div class="grid g2">
-        <div class="card">
-          <div style="font-size:2rem">“</div>
-          <p style="font-size:1.05rem">My sister in Atlanta sent us a generator and furniture through RME. Every step showed up on my phone — customs, truck, delivery — before the driver even knocked on the gate.</p>
-          <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
-            <span class="avatar">PN</span><div><b>Patricia Nakato</b><div class="small muted">Kampala, Uganda — received in 4 days from Atlanta</div></div>
-          </div>
-        </div>
-        <div class="card">
-          <div style="font-size:2rem">“</div>
-          <p style="font-size:1.05rem">We import retail stock from Yiwu every month. The LCL consolidation via Mombasa is a third of the air cost and the customs team sorts everything before cargo arrives.</p>
-          <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
-            <span class="avatar">JO</span><div><b>Joseph Okello</b><div class="small muted">Nakato Enterprises, Kampala — monthly sea freight from China</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:linear-gradient(120deg,#0a1d36,#16406f);color:#fff">
-    <div class="wrap" style="display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-      <div style="max-width:620px">
-        <h2 style="color:#fff;margin-bottom:.2em">Ready to send something home?</h2>
-        <p class="muted" style="color:#c6d6ea">Quote in 60 seconds, book online, and we'll pick up from your door. New clients save 10% on the first Express shipment.</p>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-gold" href="/book.html">Book a shipment</a>
-        <a class="btn btn-ghost" href="/quote.html">Calculate first</a>
-      </div>
-    </div>
-  </section>
-  <script>
-  (async function(){
-    try{
-      const r = await fetch('/api/activity'); const d = await r.json();
-      const el = document.getElementById('live-activity');
-      if(!d.items || !d.items.length){ el.innerHTML = '<p class="muted">No activity yet.</p>'; return; }
-      el.innerHTML = d.items.map(it => \`
-        <div class="card" style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px">
-          <span style="font-size:1.3rem">\${statusIcon(it.code)}</span>
-          <div style="flex:1">
-            <div><b class="mono" style="font-size:.86rem">\${it.trackingNo}</b>
-              <span class="pill pill-navy" style="margin-left:6px">\${it.label}</span></div>
-            <div class="small muted">📍 \${it.location||'—'} · \${(window.timeAgo||function(x){return ''})(it.at)}</div>
-          </div>
-        </div>\`).join('');
-    }catch(e){ document.getElementById('live-activity').innerHTML='<p class="muted">Activity feed unavailable right now.</p>'; }
-  })();
-  function statusIcon(c){ return ({REGISTERED:'📦',PICKED_UP:'🚚',DEPARTED_ORIGIN:'✈️',ARRIVED_GATEWAY:'🛬',CUSTOMS_CLEARED:'✅',OUT_FOR_DELIVERY:'🚚',DELIVERED:'🎉'}[c])||'📦'; }
-  </script>`;
-
-  return { title: 'Freight from USA, UK & China to Uganda and Africa', active: 'home', desc: 'Ship parcels, freight and cargo door-to-door from the United States, UK and China to Uganda and across Africa with live tracking and notifications.', content };
+  return { title: 'From Europe, USA and Asia to Africa — freight, parcels & tracking', active: 'home', desc: 'Royal Mail Express International ships parcels, freight and consolidated sea cargo from Europe, the USA and Asia to cities across Africa — with live tracking and notifications.', content };
 }
 
 function fromPrice(code) {
